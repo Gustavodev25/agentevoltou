@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { BlurTextEffect } from "./BlurTextEffect";
+import { SocialProofHero } from "./SocialProofHero";
 
 export default function LandingPage() {
     const navLinks = [
@@ -104,38 +109,27 @@ export default function LandingPage() {
                     }} />
                 </div>
 
-                <div className="relative z-10 flex min-h-[80vh] w-full max-w-7xl flex-col justify-center px-6 sm:px-8">
+                <div className="relative z-10 grid min-h-[80vh] w-full max-w-screen-2xl grid-cols-1 items-center gap-8 px-6 sm:px-8 lg:grid-cols-12">
 
-                    <div className="w-full max-w-4xl text-left">
-
-                        <h1 className="flex flex-col text-6xl font-bold tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-9xl">
-                            <span className="opacity-90">Sua Agência</span>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-white/60">Digital</span>
-                            <span className="opacity-90">Parceira</span>
+                    <div className="w-full text-left lg:col-span-7">
+                        <h1 className="flex flex-col text-6xl font-bold tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-8xl xl:text-9xl">
+                            <BlurTextEffect className="opacity-90 mb-2 whitespace-nowrap">
+                                Sua Agência
+                            </BlurTextEffect>
+                            <BlurTextEffect
+                                className="mb-2 font-bold tracking-tighter whitespace-nowrap"
+                                textGradient="linear-gradient(to right, #a7f3d0, rgba(255, 255, 255, 0.6))"
+                            >
+                                Digital
+                            </BlurTextEffect>
+                            <BlurTextEffect className="opacity-90 whitespace-nowrap">
+                                Parceira
+                            </BlurTextEffect>
                         </h1>
                     </div>
 
-                    <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden md:block lg:right-16 xl:right-24">
-                        <div className="relative flex h-32 w-32 lg:h-36 lg:w-36 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm transition-all hover:scale-110 hover:border-emerald-500/30">
-                            <div className="absolute inset-0 animate-[spin_12s_linear_infinite]">
-                                <svg className="h-full w-full" viewBox="0 0 100 100">
-                                    <defs>
-                                        <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
-                                    </defs>
-                                    <text fontSize="10" fill="rgba(255,255,255,0.85)" fontWeight="600" letterSpacing="3">
-                                        <textPath xlinkHref="#circle">
-                                            MARKETING DIGITAL • AGÊNCIA •
-                                        </textPath>
-                                    </text>
-                                </svg>
-                            </div>
-
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400/20 to-emerald-600/10 border border-emerald-400/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6 text-emerald-300">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                                </svg>
-                            </div>
-                        </div>
+                    <div className="flex justify-center lg:col-span-5 lg:justify-end">
+                        <SocialProofHero />
                     </div>
                 </div>
             </main>
