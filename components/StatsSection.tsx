@@ -112,7 +112,7 @@ function AnimatedStatCard({ stat }: { stat: typeof stats[0] }) {
 
                 <NumberFlow
                     value={isInView ? displayValue : 0}
-                    trend={false}
+
                     format={{
                         maximumFractionDigits: stat.fractionDigits,
                         minimumFractionDigits: stat.fractionDigits
